@@ -5,23 +5,10 @@ from dotenv import load_dotenv
 import os
 from pathlib import Path
 
-# Get the path to the .env file more reliably
-env_path = Path(__file__).parent.parent.parent / ".env"
-load_dotenv(env_path)
-
 app = FastAPI()
+
+# Routers
 app.include_router(pictures.router)
-
-# Supabase configuration
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_KEY = os.getenv("SUPABASE_ANON_KEY")
-BUCKET_NAME = os.getenv("SUPABASE_BUCKET_NAME", "bio-pics")
-
-# Add error checking
-if not SUPABASE_URL or not SUPABASE_KEY:
-    raise ValueError("SUPABASE_URL and SUPABASE_ANON_KEY must be set in environment variables")
-
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 @app.get("/")
 def read_root():
