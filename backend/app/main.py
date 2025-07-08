@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from .routers import pictures
 from supabase import create_client, Client
 from dotenv import load_dotenv
 import os
@@ -9,6 +10,7 @@ env_path = Path(__file__).parent.parent.parent / ".env"
 load_dotenv(env_path)
 
 app = FastAPI()
+app.include_router(pictures.router)
 
 # Supabase configuration
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -25,11 +27,11 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 def read_root():
     return {"Hello": "World"}
 
-@app.get("/pictures")
-def get_pictures():
-    try:
-        # List files in your picture bucket using the bucket name from .env
-        result = supabase.storage.from_(BUCKET_NAME).list()
-        return {"files": result}
-    except Exception as e:
-        return {"error": str(e)}
+# @app.get("/pictures")
+# def get_pictures():
+#     try:
+#         # List files in your picture bucket using the bucket name from .env
+#         result = supabase.storage.from_(BUCKET_NAME).list()
+#         return {"files": result}
+#     except Exception as e:
+#         return {"error": str(e)}
