@@ -9,8 +9,6 @@ const GridPic1 = () => {
     return (
         <>
             <div className="relative w-full h-full overflow-hidden">
-
-
             {loading && <div className="text-center">Loading image...</div>}
             {error && <div className="text-center text-red-500">Error: {error}</div>}
             {imageUrl && (
