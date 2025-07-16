@@ -1,5 +1,6 @@
 import GridPic1 from './BioPageComponents/GridPic1';
 import GridTextPicCombo1_Outset from './BioPageComponents/GridTextPicCombo1_Outset';
+import GridTextPicCombo2_Service from './BioPageComponents/GridTextPicCombo2_Service';
 
 const BioPage = () => {
     return (
@@ -11,11 +12,11 @@ const BioPage = () => {
                     <div className="col-span-1 md:col-span-12">
                         <GridPic1 />
                     </div>
-                    <div className="col-span-1 md:col-span-5">
+                    <div className="col-span-1 md:col-span-6 m-8">
                         <GridTextPicCombo1_Outset />
                     </div>
-                    <div>
-
+                    <div className="col-span-1 md:col-span-6 m-8">
+                        <GridTextPicCombo2_Service />
                     </div>
 
                 </div>

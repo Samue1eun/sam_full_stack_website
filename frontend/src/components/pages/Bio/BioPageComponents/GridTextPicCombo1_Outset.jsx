@@ -23,11 +23,12 @@ const GridTextPicCombo1_Outset = () => {
                                         className="w-full object-cover"
                                     />
                                 )}
-                                </div>
-                                <div className="absolute bottom-15 flex items-center justify-center">
-                                    <h2 className="text- text-white text-2xl font-bold px-5 py-2 bg-red-400 rounded-2xl max-w-lg">
-                                    Born in Dallas, Texas and raised in Torrance, California, I spent my childhood hiking, camping, skateboarding, snowboarding, and near the ocean.
-                                    </h2>
+                                {/* </div> */}
+                                    <div className="absolute bottom-15 flex items-center justify-center">
+                                        <h2 className="text- text-white text-2xl font-bold px-5 py-2 bg-red-400 rounded-2xl max-w-lg">
+                                        Born in Dallas, Texas and raised in Torrance, California, I spent my childhood hiking, camping, skateboarding, snowboarding, and near the ocean.
+                                        </h2>
+                                    </div>
                                 </div>
                             </figure>
                         </div>
